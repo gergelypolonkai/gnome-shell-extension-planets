@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemalist>
+    <schema id="org.gnome.shell.extensions.planets" path="/org/gnome/shell/extensions/planets/">
+        <key name="refresh-interval" type="i">
+            <default>30</default>
+            <summary>Refresh interval of planet data</summary>
+            <description>Interval in seconds. Sets how often the planet positions are recalculated. Setting this too low (e.g. below 30) may raise performance issues.</description>
+        </key>
+    </schema>
+</schemalist>

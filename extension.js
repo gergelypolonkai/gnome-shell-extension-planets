@@ -17,6 +17,8 @@ PlanetsExtension.prototype = {
 
         this.extensionMeta = extensionMeta;
 
+        this._settings = Convenience.getSettings();
+
         this.panelContainer = new St.BoxLayout({style_class: "panel-box"});
         this.actor.add_actor(this.panelContainer);
         this.actor.add_style_class_name('panel-status-button');
@@ -29,7 +31,8 @@ PlanetsExtension.prototype = {
 
         this.last_update = 0;
 
-        MainLoop.timeout_add(1, Lang.bind(this, function() {
+        MainLoop.timeout_add(this._settings.get_int("refresh-interval"),
+                            Lang.bind(this, function() {
             this.last_update++;
 
             this.panelLabel.set_text("Update count: " + this.last_update);

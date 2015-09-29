@@ -4,5 +4,6 @@
     ],
     "uuid": "planets@gergely.polonkai.eu",
     "name": "Planets",
-    "description": "Display planets position"
+    "description": "Display planets position",
+    "settings-schema": "planets"
 }
