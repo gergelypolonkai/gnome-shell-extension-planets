@@ -1,4 +1,6 @@
 const Main = imports.ui.main;
+const MainLoop = imports.mainloop;
+const Lang = imports.lang;
 const PanelMenu = imports.ui.panelMenu;
 const St = imports.gi.St;
 const Clutter = imports.gi.Clutter;
@@ -24,6 +26,14 @@ PlanetsExtension.prototype = {
             y_align: Clutter.ActorAlign.CENTER
         });
         this.panelContainer.add(this.panelLabel);
+
+        this.last_update = 0;
+
+        MainLoop.timeout_add(1, Lang.bind(this, function() {
+            this.last_update++;
+
+            this.panelLabel.set_text("Update count: " + this.last_update);
+        }));
     }
 };
 
