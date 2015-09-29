@@ -1,0 +1,8 @@
+{
+    "shell-version": [
+        "3.10"
+    ],
+    "uuid": "planets@gergely.polonkai.eu",
+    "name": "Planets",
+    "description": "Display planets position"
+}
